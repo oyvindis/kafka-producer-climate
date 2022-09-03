@@ -1,0 +1,15 @@
+logging:
+  level:
+    root: WARN
+    no: ${LOG_LEVEL:DEBUG}
+    org.springframework: WARN
+    org.springframework.web: WARN
+    org.apache.jena: ERROR
+
+server:
+  port: 8080
+
+kafka:
+  bootstrapAddress: ${KAFKA_BOOTSTRAP_HOST:10.0.0.22}:${KAFKA_BOOTSTRAP_PORT:31172}
+  topics:
+    sensor: sensor
