@@ -20,6 +20,8 @@ spec:
     spec:
       containers:
         - env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
             - name: CLIENT_ID
               valueFrom:
                 secretKeyRef:
