@@ -6,6 +6,8 @@ target/
 mvn*
 .java-version
 
+/src/main/resources/application-local.yml
+
 
 ### STS ###
 .apt_generated

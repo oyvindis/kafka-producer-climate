@@ -29,7 +29,7 @@ class ClimateService(
     @Value("\${kafka.topics.sensor}")
     val topic: String,
 ) {
-    @Scheduled(fixedDelay = 900000)
+    @Scheduled(fixedDelay = 21600000)
     fun postReadingFromAirthings() {
         try {
             logger.debug("postReadingFromAirthings")

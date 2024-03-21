@@ -6,43 +6,12 @@ logging:
     org.springframework.web: WARN
     org.apache.jena: ERROR
 
-server:
-  port: 8080
 kafka:
   bootstrapAddress: ${KAFKA_BOOTSTRAP_HOST:10.0.0.22}:${KAFKA_BOOTSTRAP_PORT:31172}
   topics:
     sensor: sensor
+
 spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          airthings:
-            clientId: ${CLIENT_ID}
-            clientSecret: ${CLIENT_SECRET}
-            clientAuthenticationMethod: client_secret_post
-            authorizationGrantType: client_credentials
-            scopes: read:device:current_values
-            clientName: ois-airthings
-        provider:
-          airthings:
-            authorizationUri: https://accounts.airthings.com/authorize
-            tokenUri: https://accounts-api.airthings.com/v1/token
----
-spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          airthings:
-            clientId: ${CLIENT_ID}
-            clientSecret: ${CLIENT_SECRET}
-            clientAuthenticationMethod: client_secret_post
-            authorizationGrantType: client_credentials
-            scopes: read:device:current_values
-            clientName: ois-airthings
-        provider:
-          airthings:
-            authorizationUri: https://accounts.airthings.com/authorize
-            tokenUri: https://accounts-api.airthings.com/v1/token
-  config.activate.on-profile: develop
+
+  profiles:
+    default: local
